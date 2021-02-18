@@ -3,7 +3,7 @@ Fetch cryptodata from either [Coingecko](https://www.coingecko.com) or [Coinpapr
 
 ## Looking to import crypto data into your google sheet?
 
-You can use those free scripts to import data from either CoinGecko API or CoinPaprika API.
+You can use those free scripts to import data from either [CoinGecko API](https://www.coingecko.com/en/api) or [CoinPaprika API](https://coinpaprika.com/api/).
 
 ## Table of contents
 * [General info](#general-info)
@@ -18,8 +18,8 @@ In order to go soft on those 2 great and free API, the script fetch all data at 
 
 # Which one do I need?
 
-The CoinGecko API import the first 750 coins by marketcap. However, prices are only quoted in USD.
-The CoinPaprika APi import all coins listed on coinpaprika.com, and prices are quoted in USD, BTC, or ETH. However, I found out that many coins are still missing from their great API.
+The CoinGecko API import the first 750 coins by marketcap. However, prices are only quoted in USD. (more coins but less data)
+The CoinPaprika APi import all coins listed on coinpaprika.com, and prices are quoted in USD, BTC, or ETH. However, I found out that many coins are still missing from their great API. (more data but some coins missing)
 
 >Notes:</br>
 1/ As of now, you can only use one script at a time. So depending on what you need, you can either pick the Coingecko.gs or Coinpaprika.gs. </br>
