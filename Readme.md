@@ -1,5 +1,13 @@
-# Import-CryptoData-into-GoogleSheet
-Fetch cryptodata from either [Coingecko](https://www.coingecko.com) or [Coinpaprika](https://coinpaprika.com/) into Google sheets for free. Enjoy!
+[![Contributors](https://img.shields.io/github/contributors/Pedrojok01/Import-CryptoData-into-GoogleSheet)](https://github.com/Pedrojok01/Import-CryptoData-into-GoogleSheet/graphs/contributors)
+[![Forks](https://img.shields.io/github/forks/Pedrojok01/Import-CryptoData-into-GoogleSheet)](https://github.com/Pedrojok01/Import-CryptoData-into-GoogleSheet/network/members)
+[![Stargazers](https://img.shields.io/github/stars/Pedrojok01/Import-CryptoData-into-GoogleSheet)](https://github.com/Pedrojok01/Import-CryptoData-into-GoogleSheet/stargazers)
+[![Issues](https://img.shields.io/github/issues/Pedrojok01/Import-CryptoData-into-GoogleSheet)](https://github.com/Pedrojok01/Import-CryptoData-into-GoogleSheet/issues)
+[![MIT License](https://img.shields.io/github/license/Pedrojok01/Import-CryptoData-into-GoogleSheet)](https://github.com/Pedrojok01/Import-CryptoData-into-GoogleSheet/blob/main/License)
+[![LinkedIn](https://img.shields.io/badge/-LinkedIn-black)](https://www.linkedin.com/in/pierre-estrabaud-96b303206/)
+[![Donate with Bitcoin](https://en.cryptobadges.io/badge/micro/37wP5rdaFgtHrEQ44M5Tntyeb9nChd8jC4)](https://en.cryptobadges.io/donate/37wP5rdaFgtHrEQ44M5Tntyeb9nChd8jC4)
+
+<h1 align="center">Import CryptoData into GoogleSheet</h1>
+<p>Fetch cryptodata from either <a href="https://www.coingecko.com">Coingecko</a> or <a href="https://coinpaprika.com">Coinpaprika</a> into Google sheets for free. Enjoy!</>
 
 ## Looking to import crypto data into your google sheet?
 
@@ -14,15 +22,16 @@ You can use those free scripts to import data from either [CoinGecko API](https:
 
 # General info?
 
-In order to go soft on those 2 great and free API, the script fetch all data at once in a dedicated tab in your spreadsheet. You can then simply import any data you need into your coinfolio/project by using this function: `CRYPTODATA("symbol"; "data")`.
+In order to go soft on those 2 great and free API, the script fetch all data at once in a dedicated tab in your spreadsheet.</br>
+You can then simply import any data you need into your coinfolio/project by using this function: `CRYPTODATA("symbol"; "data")`.
 
 # Which one do I need?
 
-The CoinGecko API import the first 750 coins by marketcap. However, prices are only quoted in USD. (more coins but less data)
-The CoinPaprika APi import all coins listed on coinpaprika.com, and prices are quoted in USD, BTC, or ETH. However, I found out that many coins are still missing from their great API. (more data but some coins missing)
+The CoinGecko API import the first 750 coins by marketcap. However, prices are only quoted in USD (all coins within the first 750, but less data).</br>
+The CoinPaprika APi import all coins listed on coinpaprika.com, and prices are quoted in USD, BTC, or ETH. However, I found out that many coins were missing from their great API (more data, but some coins missing).
 
 >Notes:</br>
-1/ As of now, you can only use one script at a time. So depending on what you need, you can either pick the Coingecko.gs or Coinpaprika.gs. </br>
+1/ As of now, you can only use one script at a time. So depending on what you need, you can either pick the [Coingecko.gs](https://github.com/Pedrojok01/Import-CryptoData-into-GoogleSheet/blob/main/scriptCoinGecko.gs) or [Coinpaprika.gs](https://github.com/Pedrojok01/Import-CryptoData-into-GoogleSheet/blob/main/scriptCoinPaprika.gs).</br>
 2/ The performance isn't great and it takes a little time to refresh, but it's free to use and it goes soft on both API (which hopefully will stay free a bit longer).
 
 # Setup
@@ -67,4 +76,4 @@ Any issues, improvements, forks are welcomed. It is certainly not optimized, but
 
 If you like it, a donation is always welcome!
 
-BTC : 37wP5rdaFgtHrEQ44M5Tntyeb9nChd8jC4
+[![Donate with Bitcoin](https://en.cryptobadges.io/badge/big/37wP5rdaFgtHrEQ44M5Tntyeb9nChd8jC4)](https://en.cryptobadges.io/donate/37wP5rdaFgtHrEQ44M5Tntyeb9nChd8jC4)
