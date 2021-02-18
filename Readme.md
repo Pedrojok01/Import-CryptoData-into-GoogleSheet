@@ -27,19 +27,19 @@ The CoinPaprika APi import all coins listed on coinpaprika.com, and prices are q
 
 # Setup
 
-    Open your crypto spreadsheet, and create an additional empty tab named `data`;
-    Go to the menu `Add-ons` > `Script Apps`;
-    Paste the content of the file `scriptCoinGecko.gs` or `scriptCoinPaprika.gs` into the editor, then save the file;
-    Go back to your spreadsheet and refresh the page;
-    A new menu item called `CoinGecko` or `CoinPaprika` depending on the one you chose should appear. Click on it, then click on `Update`;
-    All the data will be imported into your `data` tab. From now on, you can import any data with this simple: `=CRYPTODATA("coin_sympol", "data_needed")`
+- Open your crypto spreadsheet, and create an additional empty tab named `data`;
+- Go to the menu `Add-ons` > `Script Apps`;
+- Paste the content of the file `scriptCoinGecko.gs` or `scriptCoinPaprika.gs` into the editor, then save the file;
+- Go back to your spreadsheet and refresh the page;
+- A new menu item called `CoinGecko` or `CoinPaprika` depending on the one you chose should appear. Click on it, then click on `Update`;
+- All the data will be imported into your `data` tab. From now on, you can import any data with this simple: `=CRYPTODATA("coin_sympol", "data_needed")`
 
 ❗ Do not use the data sheet, it's used by the script ❗
 
 # Additional explanations
 
 ### For the coingecko script:
-`=CRYPTODATA("btc", "current_price")` => Will get btc price quoted in usd;
+`=CRYPTODATA("btc", "current_price")` => Will get btc price quoted in usd;</br>
 Feel free to explore the data tab to find the data you need. Just copy the column title and paste it in the formula above.
 
 ### For the coinpaprika script:
@@ -60,8 +60,8 @@ Feel free to explore the data tab to find the data you need. Just copy the colum
 
 # Update data
 
-    Click on the menu item, then on Update to refresh the data;
-    Then, you need to refresh your spreadsheet. One simple way is to add a new line at the top of your sheet, and to delete it right away. This small change will refresh all data automatically.
+- Click on the menu item, then on Update to refresh the data;</br>
+- Then, you need to refresh your spreadsheet. One simple way is to add a new line at the top of your sheet, and to delete it right away. This small change will refresh all data automatically.
 
 Any issues, improvements, forks are welcomed. It is certainly not optimized, but it's working :)
 
