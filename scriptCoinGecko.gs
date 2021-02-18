@@ -35,38 +35,25 @@ async function CRYPTODATAJSON() {
   var sheets = ss.getSheets();
   var sheet = ss.getSheetByName("data");
 
-  var responses = await UrlFetchApp.fetchAll(
-    [
-      {
-        'url': 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&page=1&sparkline=false',
-        'muteHttpExceptions' : true
-      },
-      {
-        'url': 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&page=2&sparkline=false',
-        'muteHttpExceptions' : true
-      },
-      {
-        'url': 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&page=3&sparkline=false',
-        'muteHttpExceptions' : true
-      }
-    ]
-  );
+  var response = await UrlFetchApp.fetch("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&page=1&sparkline=false",{ muteHttpExceptions: true });
+  var response2 = await UrlFetchApp.fetch("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&page=2&sparkline=false",{ muteHttpExceptions: true });
+  var response3 = await UrlFetchApp.fetch("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&page=3&sparkline=false",{ muteHttpExceptions: true });
 
-for (let i = 0; i < responses.length; i++) {
-    if (responses[i].getResponseCode() == 429)
-      {
-        ui.alert("too many requests");
-        return "";
-      }
-    else if (responses[i].getResponseCode() != 200)
-      {
-        ui.alert("server error : http " + (responses.getResponseCode()));
-        return "";
-      }
-  };
-  
-  var jsons = responses.map(res => JSON.parse(res.getContentText()));
-  var dataSet = jsons[0].concat(jsons[1], jsons[2]);
+  if ((response.getResponseCode() || response2.getResponseCode() || response3.getResponseCode()) == 429)
+  {
+    ui.alert("too many requests");
+    return "";
+  }
+  else if ((response.getResponseCode() || response2.getResponseCode() || response3.getResponseCode()) != 200)
+  {
+    ui.alert("server error : http " + (response.getResponseCode() || response2.getResponseCode() || response3.getResponseCode()));
+    return "";
+  }
+
+  var data = JSON.parse(response.getContentText());  
+  var data2 = JSON.parse(response2.getContentText());
+  var data3 = JSON.parse(response3.getContentText());
+  var dataSet = data.concat(data2, data3);
 
   var rows = [],
     data;
