@@ -2,9 +2,8 @@
 [![Forks](https://img.shields.io/github/forks/Pedrojok01/Import-CryptoData-into-GoogleSheet)](https://github.com/Pedrojok01/Import-CryptoData-into-GoogleSheet/network/members)
 [![Stargazers](https://img.shields.io/github/stars/Pedrojok01/Import-CryptoData-into-GoogleSheet)](https://github.com/Pedrojok01/Import-CryptoData-into-GoogleSheet/stargazers)
 [![Issues](https://img.shields.io/github/issues/Pedrojok01/Import-CryptoData-into-GoogleSheet)](https://github.com/Pedrojok01/Import-CryptoData-into-GoogleSheet/issues)
-[![MIT License](https://img.shields.io/github/license/Pedrojok01/Import-CryptoData-into-GoogleSheet)](https://github.com/Pedrojok01/Import-CryptoData-into-GoogleSheet/blob/main/License)
+[![MIT License](https://img.shields.io/github/license/Pedrojok01/Import-CryptoData-into-GoogleSheet)](https://github.com/Pedrojok01/Import-CryptoData-into-GoogleSheet/blob/main/LICENSE.md)
 [![LinkedIn](https://img.shields.io/badge/-LinkedIn-black)](https://www.linkedin.com/in/pierre-estrabaud-96b303206/)
-[![Donate with Bitcoin](https://en.cryptobadges.io/badge/micro/37wP5rdaFgtHrEQ44M5Tntyeb9nChd8jC4)](https://en.cryptobadges.io/donate/37wP5rdaFgtHrEQ44M5Tntyeb9nChd8jC4)
 
 <h1 align="center">Import CryptoData into GoogleSheet</h1>
 <p>Fetch cryptodata from either <a href="https://www.coingecko.com">Coingecko</a> or <a href="https://coinpaprika.com">Coinpaprika</a> into Google sheets for free. Enjoy!</>
@@ -14,11 +13,12 @@
 You can use those free scripts to import data from either [CoinGecko API](https://www.coingecko.com/en/api) or [CoinPaprika API](https://coinpaprika.com/api/).
 
 ## Table of contents
-* [General info](#general-info)
-* [Which one do I need?](#Which-one-do-I-need?)
-* [Setup](#setup)
-* [Additional explanations](#Additional-explanations)
-* [Update data](#Update-data)
+
+- [General info](#general-info)
+- [Which one do I need?](#Which-one-do-I-need?)
+- [Setup](#setup)
+- [Additional explanations](#Additional-explanations)
+- [Update data](#Update-data)
 
 # General info?
 
@@ -30,9 +30,9 @@ You can then simply import any data you need into your coinfolio/project by usin
 The CoinGecko API import the first 750 coins by marketcap. However, prices are only quoted in USD (all coins within the first 750, but less data).</br>
 The CoinPaprika APi import all coins listed on coinpaprika.com, and prices are quoted in USD, BTC, or ETH. However, I found out that many coins were missing from their great API (more data, but some coins missing).
 
->Notes:</br>
-1/ As of now, you can only use one script at a time. So depending on what you need, you can either pick the [Coingecko.gs](https://github.com/Pedrojok01/Import-CryptoData-into-GoogleSheet/blob/main/scriptCoinGecko.gs) or [Coinpaprika.gs](https://github.com/Pedrojok01/Import-CryptoData-into-GoogleSheet/blob/main/scriptCoinPaprika.gs).</br>
-2/ The performance isn't great and it takes a little time to refresh, but it's free to use and it goes soft on both API (which hopefully will stay free a bit longer).
+> Notes:</br>
+> 1/ As of now, you can only use one script at a time. So depending on what you need, you can either pick the [Coingecko.gs](https://github.com/Pedrojok01/Import-CryptoData-into-GoogleSheet/blob/main/scriptCoinGecko.gs) or [Coinpaprika.gs](https://github.com/Pedrojok01/Import-CryptoData-into-GoogleSheet/blob/main/scriptCoinPaprika.gs).</br>
+> 2/ The performance isn't great and it takes a little time to refresh, but it's free to use and it goes soft on both API (which hopefully will stay free a bit longer).
 
 # Setup
 
@@ -48,15 +48,18 @@ The CoinPaprika APi import all coins listed on coinpaprika.com, and prices are q
 # Additional explanations
 
 ### For the coingecko script:
+
 `=CRYPTODATA("btc", "current_price")` => Will get btc price quoted in usd;</br>
 Feel free to explore the data tab to find the data you need. Just copy the column title and paste it in the formula above.
 
 ### For the coinpaprika script:
 
 #### Get data for a specific coin :
+
 `=CRYPTODATA("ETH"; "btc_price")` => Will get eth price quoted in btc;
 
 #### Get historical data for a specific coin :
+
 `=CRYPTODATAHISTORY("<coin>"; "<date>"; "<type of data>"; "<quote>")` with params being :
 
 - coin : a single coin ticket like "ETH" or "BTC" or "XMR"
@@ -65,6 +68,7 @@ Feel free to explore the data tab to find the data you need. Just copy the colum
 - quote : optional, defaults to usd, but can be set to "usd" or "btc"
 
 #### Get global data :
+
 `=CRYPTODATAGLOBAL("bitcoin_dominance_percentage")`
 
 # Update data
@@ -74,6 +78,15 @@ Feel free to explore the data tab to find the data you need. Just copy the colum
 
 Any issues, improvements, forks are welcomed. It is certainly not optimized, but it's working :)
 
-If you like it, a donation is always welcome!
+<br>
 
-[![Donate with Bitcoin](https://en.cryptobadges.io/badge/big/37wP5rdaFgtHrEQ44M5Tntyeb9nChd8jC4)](https://en.cryptobadges.io/donate/37wP5rdaFgtHrEQ44M5Tntyeb9nChd8jC4)
+<div align="center">
+<h3> If you like it, a donation is always welcome! <h3>
+
+[![btc_qrcode](./btc_qrcode.jpg)](https://raw.githubusercontent.com/Pedrojok01/Import-CryptoData-into-GoogleSheet/blob/main/bitcoin-address.txt)
+
+```
+BTC: bc1pvc6r0y86lw4tfyrwjwhnpcckt8dyyyp4xv433mvrz6p4cewxk4lq0du6t9
+```
+
+</div>
