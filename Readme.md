@@ -83,7 +83,7 @@ Any issues, improvements, forks are welcomed. It is certainly not optimized, but
 <div align="center">
 <h3> If you like it, a donation is always welcome! <h3>
 
-[![btc_qrcode](./btc_qrcode.jpg)](https://raw.githubusercontent.com/Pedrojok01/Import-CryptoData-into-GoogleSheet/blob/main/bitcoin-address.txt)
+[![btc_qrcode](./btc_qrcode.jpg)](https://raw.githubusercontent.com/Pedrojok01/Import-CryptoData-into-GoogleSheet/main/bitcoin-address.txt)
 
 ```
 BTC: bc1pvc6r0y86lw4tfyrwjwhnpcckt8dyyyp4xv433mvrz6p4cewxk4lq0du6t9
