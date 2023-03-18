@@ -29,6 +29,13 @@
 
 <br>
 
+## Update March 2023:
+
+- Both script have been cleaned, refactored and optimized. The performance should be better now.
+- I highly recommend using the coinpaprika script, as the free CoinGecko API is too crowded and is getting hard to refresh, unless you only need some of the big coins.
+
+<br>
+
 # General info?
 
 In order to go soft on those 2 great and free API, the script fetch all data at once in a dedicated tab in your spreadsheet.</br>
