@@ -1,77 +1,52 @@
 function onOpen() {
-  var ui = SpreadsheetApp.getUi();
-  ui.createMenu('CoinGecko')
-    .addItem('Update', 'CRYPTODATAJSON')
+  SpreadsheetApp.getUi()
+    .createMenu("CoinGecko")
+    .addItem("Update", "CRYPTODATAJSON")
     .addToUi();
 }
 
 function CRYPTODATA(symbol, colName) {
-  var ss = SpreadsheetApp.getActiveSpreadsheet();
-  var sheets = ss.getSheets();
-  var sheet = ss.getSheetByName("data");
-  var data = sheet.getDataRange().getValues();
-  var col = data[0].indexOf(colName);
-  if (col != -1) {
-    var row = -1;
-    for (var i = 0; i < data.length; i++) {
-      if (data[i][2] == symbol) {
-        row = i;
-        break;
-      }
-    }
-    if (row != -1) {
-      return data[row][col];
-    } else {
-      return "symbol not found";
-    }
-  } else {
-    return "datatype not found";
-  }
+  const sheetData = SpreadsheetApp.getActiveSpreadsheet()
+    .getSheetByName("data")
+    .getDataRange()
+    .getValues();
+  const col = sheetData[0].indexOf(colName);
+
+  if (col === -1) return "datatype not found";
+
+  const row = sheetData.findIndex((row, i) => i > 0 && row[2] === symbol);
+  return row === -1 ? "symbol not found" : sheetData[row][col];
 }
 
-async function CRYPTODATAJSON() {
-  var ui = SpreadsheetApp.getUi();
-  var ss = SpreadsheetApp.getActiveSpreadsheet();
-  var sheets = ss.getSheets();
-  var sheet = ss.getSheetByName("data");
+function CRYPTODATAJSON() {
+  const ui = SpreadsheetApp.getUi();
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("data");
 
-  var responses = await UrlFetchApp.fetchAll(
-    [
-      {
-        'url': 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&page=1&sparkline=false',
-        'muteHttpExceptions' : true
-      },
-      {
-        'url': 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&page=2&sparkline=false',
-        'muteHttpExceptions' : true
-      },
-      {
-        'url': 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&page=3&sparkline=false',
-        'muteHttpExceptions' : true
-      }
-    ]
+  const urls = [
+    "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&page=1&sparkline=false",
+    "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&page=2&sparkline=false",
+    "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&page=3&sparkline=false",
+  ];
+
+  const fetchOptions = { muteHttpExceptions: true };
+  const responses = UrlFetchApp.fetchAll(
+    urls.map((url) => ({ url, ...fetchOptions }))
   );
 
-for (let i = 0; i < responses.length; i++) {
-    if (responses[i].getResponseCode() == 429)
-      {
-        ui.alert("too many requests");
-        return "";
-      }
-    else if (responses[i].getResponseCode() != 200)
-      {
-        ui.alert("server error : http " + (responses.getResponseCode()));
-        return "";
-      }
-  };
-  
-  var jsons = responses.map(res => JSON.parse(res.getContentText()));
-  var dataSet = jsons[0].concat(jsons[1], jsons[2]);
+  if (responses.some((res) => res.getResponseCode() === 429)) {
+    ui.alert("too many requests");
+    return;
+  }
 
-  var rows = [],
-    data;
-  var nbCol = 0;
-  rows.push(["id",
+  if (responses.some((res) => res.getResponseCode() !== 200)) {
+    ui.alert("server error : http " + res.getResponseCode());
+    return;
+  }
+
+  const dataSet = responses.flatMap((res) => JSON.parse(res.getContentText()));
+
+  const header = [
+    "id",
     "name",
     "symbol",
     "market_cap_rank",
@@ -94,38 +69,13 @@ for (let i = 0; i < responses.length; i++) {
     "atl",
     "atl_change_percentage",
     "atl_date",
-    "last_updated"
-  ]);
+    "last_updated",
+  ];
 
-  for (i = 0; i < dataSet.length; i++) {
-    data = dataSet[i];
-    rows.push([data.id,
-      data.name,
-      data.symbol,
-      data.market_cap_rank,
-      data.current_price,
-      data.market_cap,
-      data.circulating_supply,
-      data.total_supply,
-      data.max_supply,
-      data.total_volume,
-      data.high_24h,
-      data.low_24h,
-      data.price_change_24h,
-      data.price_change_percentage_24h,
-      data.market_cap_change_24h,
-      data.market_cap_change_percentage_24h,
-      data.usd_percent_change_1y,
-      data.ath,
-      data.ath_change_percentage,
-      data.ath_date,
-      data.atl,
-      data.atl_change_percentage,
-      data.atl_date,
-      data.last_updated,
-    ]);
-  }
-
-  dataRange = sheet.getRange(1, 1, rows.length, rows[0].length);
+  const rows = [
+    header,
+    ...dataSet.map((data) => header.map((col) => data[col])),
+  ];
+  const dataRange = sheet.getRange(1, 1, rows.length, rows[0].length);
   dataRange.setValues(rows);
 }
