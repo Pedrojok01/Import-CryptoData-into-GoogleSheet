@@ -95,7 +95,7 @@ function CRYPTODATAJSON() {
   const ss = SpreadsheetApp.getActiveSpreadsheet();
   const sheet = ss.getSheetByName("data");
 
-  const url = "https://api.coinpaprika.com/v1/tickers?quotes=BTC,USD,ETH";
+  const url = "https://api.coinpaprika.com/v1/tickers?quotes=USD,BTC";
   const dataAll = fetchUrl(url);
   const dataSet = dataAll.sort((a, b) => (a.rank > b.rank ? 1 : -1));
 
@@ -103,11 +103,15 @@ function CRYPTODATAJSON() {
 
   dataSet.forEach((data) => {
     const rowData = headers.map((header) => {
-      const [quote, property] = header.split("_");
-      if (["BTC", "USD", "ETH"].includes(quote) && data.quotes[quote]) {
-        return data.quotes[quote][property] || data[header];
+      if (header.startsWith("btc_")) {
+        const key = header.slice(4);
+        return data.quotes["BTC"][key] || "";
       }
-      return data[header];
+      if (header.startsWith("usd_")) {
+        const key = header.slice(4);
+        return data.quotes["USD"][key] || "";
+      }
+      return data[header] || "";
     });
     rows.push(rowData);
   });
@@ -147,12 +151,17 @@ const headers = [
   "total_supply",
   "max_supply",
   "beta_value",
+  "first_data_at",
+  "last_updated",
   "btc_price",
   "btc_volume_24h",
   "btc_volume_24h_change_24h",
   "btc_market_cap",
   "btc_market_cap_change_24h",
+  "btc_percent_change_15m",
+  "btc_percent_change_30m",
   "btc_percent_change_1h",
+  "btc_percent_change_6h",
   "btc_percent_change_12h",
   "btc_percent_change_24h",
   "btc_percent_change_7d",
@@ -166,7 +175,10 @@ const headers = [
   "usd_volume_24h_change_24h",
   "usd_market_cap",
   "usd_market_cap_change_24h",
+  "usd_percent_change_15m",
+  "usd_percent_change_30m",
   "usd_percent_change_1h",
+  "usd_percent_change_6h",
   "usd_percent_change_12h",
   "usd_percent_change_24h",
   "usd_percent_change_7d",
@@ -175,19 +187,4 @@ const headers = [
   "usd_ath_price",
   "usd_ath_date",
   "usd_percent_from_price_ath",
-  "eth_price",
-  "eth_volume_24h",
-  "eth_volume_24h_change_24h",
-  "eth_market_cap",
-  "eth_market_cap_change_24h",
-  "eth_percent_change_1h",
-  "eth_percent_change_12h",
-  "eth_percent_change_24h",
-  "eth_percent_change_7d",
-  "eth_percent_change_30d",
-  "eth_percent_change_1y",
-  "eth_ath_price",
-  "eth_ath_date",
-  "eth_percent_from_price_ath",
-  "last_updated",
 ];
