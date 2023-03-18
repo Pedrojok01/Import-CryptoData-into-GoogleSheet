@@ -1,3 +1,7 @@
+<div align="center">
+
+<h1>Import CryptoData into GoogleSheet</h1>
+
 [![Contributors](https://img.shields.io/github/contributors/Pedrojok01/Import-CryptoData-into-GoogleSheet)](https://github.com/Pedrojok01/Import-CryptoData-into-GoogleSheet/graphs/contributors)
 [![Forks](https://img.shields.io/github/forks/Pedrojok01/Import-CryptoData-into-GoogleSheet)](https://github.com/Pedrojok01/Import-CryptoData-into-GoogleSheet/network/members)
 [![Stargazers](https://img.shields.io/github/stars/Pedrojok01/Import-CryptoData-into-GoogleSheet)](https://github.com/Pedrojok01/Import-CryptoData-into-GoogleSheet/stargazers)
@@ -5,12 +9,15 @@
 [![MIT License](https://img.shields.io/github/license/Pedrojok01/Import-CryptoData-into-GoogleSheet)](https://github.com/Pedrojok01/Import-CryptoData-into-GoogleSheet/blob/main/LICENSE.md)
 [![LinkedIn](https://img.shields.io/badge/-LinkedIn-black)](https://www.linkedin.com/in/pierre-estrabaud-96b303206/)
 
-<h1 align="center">Import CryptoData into GoogleSheet</h1>
-<p>Fetch cryptodata from either <a href="https://www.coingecko.com">Coingecko</a> or <a href="https://coinpaprika.com">Coinpaprika</a> into Google sheets for free. Enjoy!</>
+</div>
 
-## Looking to import crypto data into your google sheet?
+<br></br>
 
-You can use those free scripts to import data from either [CoinGecko API](https://www.coingecko.com/en/api) or [CoinPaprika API](https://coinpaprika.com/api/).
+## Looking for an easy way to import crypto data into your google sheet?
+
+<p>Fetch cryptodata direclty into your Google sheets from either <a href="https://www.coingecko.com">Coingecko</a> or <a href="https://coinpaprika.com">Coinpaprika</a> APIs for free. Enjoy!</p>
+
+<br>
 
 ## Table of contents
 
@@ -20,10 +27,14 @@ You can use those free scripts to import data from either [CoinGecko API](https:
 - [Additional explanations](#Additional-explanations)
 - [Update data](#Update-data)
 
+<br>
+
 # General info?
 
 In order to go soft on those 2 great and free API, the script fetch all data at once in a dedicated tab in your spreadsheet.</br>
 You can then simply import any data you need into your coinfolio/project by using this function: `CRYPTODATA("symbol"; "data")`.
+
+<br>
 
 # Which one do I need?
 
@@ -33,6 +44,8 @@ The CoinPaprika APi import all coins listed on coinpaprika.com, and prices are q
 > Notes:</br>
 > 1/ As of now, you can only use one script at a time. So depending on what you need, you can either pick the [Coingecko.gs](https://github.com/Pedrojok01/Import-CryptoData-into-GoogleSheet/blob/main/scriptCoinGecko.gs) or [Coinpaprika.gs](https://github.com/Pedrojok01/Import-CryptoData-into-GoogleSheet/blob/main/scriptCoinPaprika.gs).</br>
 > 2/ The performance isn't great and it takes a little time to refresh, but it's free to use and it goes soft on both API (which hopefully will stay free a bit longer).
+
+<br>
 
 # Setup
 
@@ -44,6 +57,8 @@ The CoinPaprika APi import all coins listed on coinpaprika.com, and prices are q
 - All the data will be imported into your `data` tab. From now on, you can import any data with this simple: `=CRYPTODATA("coin_sympol", "data_needed")`
 
 ❗ Do not use the data sheet, it's used by the script ❗
+
+<br>
 
 # Additional explanations
 
@@ -70,6 +85,8 @@ Feel free to explore the data tab to find the data you need. Just copy the colum
 #### Get global data :
 
 `=CRYPTODATAGLOBAL("bitcoin_dominance_percentage")`
+
+<br>
 
 # Update data
 
