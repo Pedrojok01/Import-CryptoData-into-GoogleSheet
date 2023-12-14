@@ -7,7 +7,7 @@
 [![Stargazers](https://img.shields.io/github/stars/Pedrojok01/Import-CryptoData-into-GoogleSheet)](https://github.com/Pedrojok01/Import-CryptoData-into-GoogleSheet/stargazers)
 [![Issues](https://img.shields.io/github/issues/Pedrojok01/Import-CryptoData-into-GoogleSheet)](https://github.com/Pedrojok01/Import-CryptoData-into-GoogleSheet/issues)
 [![MIT License](https://img.shields.io/github/license/Pedrojok01/Import-CryptoData-into-GoogleSheet)](https://github.com/Pedrojok01/Import-CryptoData-into-GoogleSheet/blob/main/LICENSE.md)
-[![LinkedIn](https://img.shields.io/badge/-LinkedIn-black)](https://www.linkedin.com/in/pierre-estrabaud-96b303206/)
+[![LinkedIn](https://img.shields.io/badge/-LinkedIn-blue)](https://www.linkedin.com/in/pierre-e/)
 
 </div>
 
@@ -107,10 +107,10 @@ Any issues, improvements, forks are welcomed. It is certainly not optimized, but
 <div align="center">
 <h3> If you like it, a donation is always welcome! <h3>
 
-[![btc_qrcode](./btc_qrcode.jpg)](https://raw.githubusercontent.com/Pedrojok01/Import-CryptoData-into-GoogleSheet/main/bitcoin-address.txt)
+[![btc_qrcode](./btc_qrcode.png)](https://raw.githubusercontent.com/Pedrojok01/Import-CryptoData-into-GoogleSheet/main/bitcoin-address.txt)
 
 ```
-BTC: bc1pvc6r0y86lw4tfyrwjwhnpcckt8dyyyp4xv433mvrz6p4cewxk4lq0du6t9
+BTC: bc1pgud5lk850jrk7ty3kyzazntwdnnl6xrnm2wm5trdz7myfkhccglskqmgdk
 ```
 
 </div>
