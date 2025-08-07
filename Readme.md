@@ -71,7 +71,7 @@ The CoinPaprika APi import all coins listed on coinpaprika.com, and prices are q
 
 ### For the coingecko script:
 
-`=CRYPTODATA("btc", "current_price")` => Will get btc price quoted in usd;</br>
+`=CRYPTODATA("BTC", "usd_price")` => Will get btc price quoted in usd;</br>
 Feel free to explore the data tab to find the data you need. Just copy the column title and paste it in the formula above.
 
 ### For the coinpaprika script:
@@ -88,10 +88,6 @@ Feel free to explore the data tab to find the data you need. Just copy the colum
 - date : something like "2018-02-20"
 - type of data : can be "price", "volume_24h" or "market_cap"
 - quote : optional, defaults to usd, but can be set to "usd" or "btc"
-
-#### Get global data :
-
-`=CRYPTODATAGLOBAL("bitcoin_dominance_percentage")`
 
 <br>
 
