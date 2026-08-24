@@ -26,6 +26,7 @@
 - [Setup](#setup)
 - [Additional explanations](#Additional-explanations)
 - [Update data](#Update-data)
+- [Support](#support)
 
 <br>
 
@@ -102,15 +103,22 @@ Feel free to explore the data tab to find the data you need. Just copy the colum
 
 Any issues, improvements, forks are welcomed. It is certainly not optimized, but it's working :)
 
+<br/>
+
+## Support
+
+If these scripts saved you a few hours of research and setup, buy me a coffee:
+
+<p align="center">
+  <a href="https://www.buymeacoffee.com/Pedrojok01"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" height="48" width="173"></a>
+</p>
+
 <br>
 
-<div align="center">
-<h3> If you like it, a donation is always welcome! <h3>
+### Enjoy!!!
 
-[![btc_qrcode](./btc_qrcode.png)](https://raw.githubusercontent.com/Pedrojok01/Import-CryptoData-into-GoogleSheet/main/bitcoin-address.txt)
+### ... and don't forget to leave a ⭐ if you like it!
 
-```
-BTC: bc1pgud5lk850jrk7ty3kyzazntwdnnl6xrnm2wm5trdz7myfkhccglskqmgdk
-```
+<br/>
 
-</div>
+<p align="right">(<a href="#top">back to top</a>)</p>
